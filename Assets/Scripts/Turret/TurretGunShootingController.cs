@@ -28,7 +28,7 @@ public class TurretGunShootingController : MonoBehaviour
         
         foreach (var firePoint in firePoints)
         {
-            Instantiate(bulletPrefab, firePoint);
+            Instantiate(bulletPrefab, firePoint.position, transform.rotation);
         }
     }
 }
