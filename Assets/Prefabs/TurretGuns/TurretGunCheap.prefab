@@ -89,6 +89,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretGunCheap
       objectReference: {fileID: 0}
+    - target: {fileID: 2155416687490317269, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: inputReader
+      value: 
+      objectReference: {fileID: 11400000, guid: 726461d86b407f14b8d40d62a9f65ebb, type: 2}
+    - target: {fileID: 3369264321244136081, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: inputReader
+      value: 
+      objectReference: {fileID: 11400000, guid: 726461d86b407f14b8d40d62a9f65ebb, type: 2}
     - target: {fileID: 3369264321244136081, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
       propertyPath: bulletPrefab
       value: 
