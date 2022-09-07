@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5607214406173677950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916372, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716992657424916373, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b5bdc31587ab9f4787ceaa8b6f0bf61, type: 3}
+    - target: {fileID: 1716992657424916379, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: m_Name
+      value: TurretGunExpensive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369264321244136081, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 736743596158844464, guid: 749692769338837438c3f006bfc1e466, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1ffe841c603ec54f83d8720a9642bad, type: 3}
