@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 5780d39e03110a241b29b11853982b71
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Hind Guntur
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 75eb98340781519439658317c1826f8b, type: 3}
+  - {fileID: 12800000, guid: 229ccf8d5bc81bb43a5a13549a965ed0, type: 3}
+  - {fileID: 12800000, guid: 34077a8988af9ed478ad16ab9d407223, type: 3}
+  - {fileID: 12800000, guid: 660bf4d69cdd3d9479e3080e2eff36be, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
