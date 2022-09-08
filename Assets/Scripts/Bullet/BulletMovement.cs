@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 namespace Bullet
 {
-    public class BulletController : MonoBehaviour
+    public class BulletMovement : MonoBehaviour
     {
         [SerializeField] private float speed;
 
