@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6249526273769319305}
   - component: {fileID: 1345807327142880975}
   - component: {fileID: 3925491323488760106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023b798669d859a499a04235019ff53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 0
 --- !u!61 &6249526273769319305
 BoxCollider2D:
   m_ObjectHideFlags: 0
