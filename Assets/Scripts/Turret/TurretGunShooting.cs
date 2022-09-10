@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Input;
+using Input.ScriptableObject;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

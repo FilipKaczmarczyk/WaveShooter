@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Enemies.ScriptableObjects;
 using UnityEngine;
 using Waves;
 
@@ -6,15 +7,21 @@ namespace Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
+        [SerializeField] private AllTypesOfEnemyDataSO allTypesOfEnemyData;
         [SerializeField] private float spawnRadius = 30f;
         
         public void SpawnEnemies(WaveManager.Wave wave)
         {
-            for (var i = 0; i < wave.enemiesCount; i++)
+            foreach (var enemyToSpawnInfo in wave.enemyToSpawnInfos)
             {
-                var randomEnemy = Random.Range(0, wave.enemyTypes.Count);
-                
-                Instantiate(wave.enemyTypes[randomEnemy], RandomOnCircle(Vector3.zero, spawnRadius), Quaternion.identity);
+                for (var i = 0; i < enemyToSpawnInfo.enemyCount; i++)
+                {
+                    var enemyData = allTypesOfEnemyData.enemies.Find(x => x.enemyType == enemyToSpawnInfo.enemyType);
+                    
+                    var enemyGO = Instantiate(enemyData.enemyPrefab, RandomOnCircle(Vector3.zero, spawnRadius), Quaternion.identity);
+
+                    enemyGO.GetComponent<EnemyMovement>().Init(wave.enemiesSpeedMultiplier);
+                }
             }
         }
 

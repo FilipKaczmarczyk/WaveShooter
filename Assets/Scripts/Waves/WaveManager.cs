@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Enemies;
+using Enemies.ScriptableObjects;
 using Events;
 using UnityEngine;
 
@@ -16,17 +18,18 @@ namespace Waves
             Fighting,
             Prepare
         }
-
-        public enum EnemyType
+        
+        [Serializable]
+        public class EnemyToSpawnInfo
         {
-            
+            public EnemyType enemyType;
+            public int enemyCount;
         }
         
         [Serializable]
         public class Wave
         {
-            public List<GameObject> enemyTypes;
-            public int enemiesCount;
+            public List<EnemyToSpawnInfo> enemyToSpawnInfos;
             public float enemiesSpeedMultiplier;
         }
 
@@ -112,7 +115,9 @@ namespace Waves
         {
             enemySpawner.SpawnEnemies(waves[_currentWave]);
 
-            UpdateCurrentEnemyCount(waves[_currentWave].enemiesCount);
+            var enemiesCount = waves[_currentWave].enemyToSpawnInfos.Sum(enemyToSpawnInfo => enemyToSpawnInfo.enemyCount);
+
+            UpdateCurrentEnemyCount(enemiesCount);
         }
 
         private void RemoveEnemy()

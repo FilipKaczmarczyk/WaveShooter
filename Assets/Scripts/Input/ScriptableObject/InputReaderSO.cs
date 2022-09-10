@@ -2,11 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Input
+namespace Input.ScriptableObject
 {
     // We want only one input reader
     //[CreateAssetMenu(menuName = "WaveShooter/InputReader")]
-    public class InputReaderSO : ScriptableObject
+    public class InputReaderSO : UnityEngine.ScriptableObject
     {
         [Header("Gameplay")]
         public InputActionReference gameplayShoot;

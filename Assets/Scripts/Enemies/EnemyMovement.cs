@@ -7,15 +7,15 @@ namespace Enemies
         [SerializeField] private float speed;
 
         private Rigidbody2D _rigidbody;
-        
-        private void Awake()
+
+        public void Init(float speedModifier)
         {
-            var lookDirection = Vector2.zero - (Vector2)transform.position;
+            var lookDirection = Vector2.zero - (Vector2) transform.position;
             var angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
             transform.rotation = Quaternion.Euler(0, 0, angle);
-            
+
             _rigidbody = GetComponent<Rigidbody2D>();
-            _rigidbody.AddForce(speed * transform.up, ForceMode2D.Impulse);
+            _rigidbody.AddForce(speed * transform.up * speedModifier, ForceMode2D.Impulse);
         }
     }
 }
