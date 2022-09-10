@@ -9,6 +9,6 @@ public class TurretCollision : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        turretHealth.ChangeTurretHealth(-TurretDamageTaken);
+        turretHealth.AddTurretHealth(-TurretDamageTaken);
     }
 }

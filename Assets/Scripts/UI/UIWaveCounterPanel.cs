@@ -5,7 +5,7 @@ using Waves;
 
 namespace UI
 {
-    public class UICurrentWavePanel : MonoBehaviour
+    public class UIWaveCounterPanel : MonoBehaviour
     {
         [SerializeField] private WaveManager waveManager;
         [SerializeField] private TextMeshProUGUI currentWaveText;
@@ -14,12 +14,12 @@ namespace UI
         {
             SetCurrentWaveText();
 
-            WaveManager.WaveChange += SetCurrentWaveText;
+            WaveManager.StartFightingState += SetCurrentWaveText;
         }
 
         private void OnDisable()
         {
-            WaveManager.WaveChange -= SetCurrentWaveText;
+            WaveManager.StartFightingState -= SetCurrentWaveText;
         }
 
         private void SetCurrentWaveText()

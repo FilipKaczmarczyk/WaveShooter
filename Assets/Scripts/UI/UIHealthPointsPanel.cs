@@ -14,14 +14,12 @@ namespace UI
         
         private void OnEnable()
         {
-            UpdateHealthUI();
-
             TurretHealth.TurretHealthChange += UpdateHealthUI;
         }
 
         private void OnDisable()
         {
-            TurretHealth.TurretHealthChange += UpdateHealthUI;
+            TurretHealth.TurretHealthChange -= UpdateHealthUI;
         }
 
         private void UpdateHealthUI()

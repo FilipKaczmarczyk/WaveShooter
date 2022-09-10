@@ -8,12 +8,18 @@ namespace Waves
 {
     public class WaveManager : MonoBehaviour
     {
-        public static event EventManager.VoidEventHandler WaveChange;
-        
-        private enum WaveState
+        public static event EventManager.VoidEventHandler StartPrepareState;
+        public static event EventManager.VoidEventHandler StartFightingState;
+
+        public enum WaveState
         {
             Fighting,
             Prepare
+        }
+
+        public enum EnemyType
+        {
+            
         }
         
         [Serializable]
@@ -24,9 +30,15 @@ namespace Waves
             public float enemiesSpeedMultiplier;
         }
 
-        [SerializeField] private EnemySpawner enemySpawner;
+        [Header("Waves values")]
         [SerializeField] private List<Wave> waves;
         [SerializeField] private float timeBetweenWaves = 10f;
+        
+        [Header("UI references")]
+        [SerializeField] private UIWaveTrackerPanel uiWaveTrackerPanel;
+        
+        [Header("Other references")]
+        [SerializeField] private EnemySpawner enemySpawner;
         
         private int _currentWave = 0;
         private WaveState _currentWaveState = WaveState.Fighting;
@@ -50,29 +62,64 @@ namespace Waves
 
         private void Update()
         {
+            UpdatePrepareState();
+        }
+
+        private void UpdatePrepareState()
+        {
             if (_currentWaveState != WaveState.Prepare)
                 return;
-
+            
             _prepareTimer -= Time.deltaTime;
+
+            uiWaveTrackerPanel.UpdateTimeToNextWaveText(_prepareTimer);
 
             if (_prepareTimer <= 0f)
             {
-                _currentWaveState = WaveState.Fighting;
-                
-                SpawnWave();
+                ChangeState(WaveState.Fighting);
             }
+        }
+
+        private void ChangeState(WaveState waveState)
+        {
+            _currentWaveState = waveState;
+            
+            if (waveState == WaveState.Fighting)
+            {
+                SetupFightingState();
+            }
+            else
+            {
+                SetupPrepareState();
+            }
+        }
+
+        private void SetupFightingState()
+        {
+            StartFightingState?.Invoke();
+                
+            SpawnWave();
+        }
+        
+        private void SetupPrepareState()
+        {
+            StartPrepareState?.Invoke();
+            
+            _prepareTimer = timeBetweenWaves;
         }
 
         private void SpawnWave()
         {
             enemySpawner.SpawnEnemies(waves[_currentWave]);
 
-            AddCurrentEnemyCount(waves[_currentWave].enemiesCount);
+            UpdateCurrentEnemyCount(waves[_currentWave].enemiesCount);
         }
 
-        private void RemoveEnemy(int enemyValue)
+        private void RemoveEnemy()
         {
-            _currentEnemyCount--;
+            UpdateCurrentEnemyCount(-1);
+            
+            uiWaveTrackerPanel.UpdateEnemiesCountText(_currentEnemyCount);
 
             if (IsWaveEnd())
             {
@@ -80,27 +127,30 @@ namespace Waves
             }
         }
         
-        private void AddCurrentEnemyCount(int amount)
+        private void SetNextWave()
+        {
+            if (_currentWave == waves.Count - 1)
+            {
+                return;
+            }
+            
+            _currentWave++;
+            
+            ChangeState(WaveState.Prepare);
+        }
+        
+        private void UpdateCurrentEnemyCount(int amount)
         {
             _currentEnemyCount += amount;
+            
+            uiWaveTrackerPanel.UpdateEnemiesCountText(_currentEnemyCount);
         }
 
         private bool IsWaveEnd()
         {
             return _currentEnemyCount == 0;
         }
-
-        private void SetNextWave()
-        {
-            _currentWave++;
-            
-            WaveChange?.Invoke();
-
-            _currentWaveState = WaveState.Prepare;
-
-            _prepareTimer = timeBetweenWaves;
-        }
-
+        
         public int GetCurrentWave()
         {
             return _currentWave;
@@ -109,6 +159,11 @@ namespace Waves
         public int GetWavesCount()
         {
             return waves.Count;
+        }
+
+        public WaveState GetCurrentWaveState()
+        {
+            return _currentWaveState;
         }
     }
 }

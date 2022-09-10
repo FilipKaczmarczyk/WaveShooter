@@ -7,7 +7,7 @@ namespace Turret
 {
     public class TurretGunShooting : MonoBehaviour
     {
-        [SerializeField] private InputReader inputReader;
+        [SerializeField] private InputReaderSO inputReaderSo;
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private List<Transform> firePoints;
 
@@ -15,12 +15,12 @@ namespace Turret
         
         private void OnEnable()
         {
-            InputReader.Register(Fire, inputReader.gameplayShoot);
+            InputReaderSO.Register(Fire, inputReaderSo.gameplayShoot);
         }
     
         private void OnDisable()
         {
-            InputReader.Unregister(Fire, inputReader.gameplayShoot);
+            InputReaderSO.Unregister(Fire, inputReaderSo.gameplayShoot);
         }
 
         private void Fire(InputAction.CallbackContext ctx)

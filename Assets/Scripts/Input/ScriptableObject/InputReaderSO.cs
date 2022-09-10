@@ -6,7 +6,7 @@ namespace Input
 {
     // We want only one input reader
     //[CreateAssetMenu(menuName = "WaveShooter/InputReader")]
-    public class InputReader : ScriptableObject
+    public class InputReaderSO : ScriptableObject
     {
         [Header("Gameplay")]
         public InputActionReference gameplayShoot;

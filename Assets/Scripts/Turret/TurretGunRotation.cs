@@ -6,18 +6,18 @@ namespace Turret
 {
     public class TurretGunRotation : MonoBehaviour
     {
-        [SerializeField] private InputReader inputReader;
+        [SerializeField] private InputReaderSO inputReaderSo;
     
         private Vector2 _mouseScreenPosition;
     
         private void OnEnable()
         {
-            InputReader.Register(OnMousePosition, inputReader.gameplayMousePosition);
+            InputReaderSO.Register(OnMousePosition, inputReaderSo.gameplayMousePosition);
         }
     
         private void OnDisable()
         {
-            InputReader.Unregister(OnMousePosition, inputReader.gameplayMousePosition);
+            InputReaderSO.Unregister(OnMousePosition, inputReaderSo.gameplayMousePosition);
         }
     
         private void OnMousePosition(InputAction.CallbackContext ctx)

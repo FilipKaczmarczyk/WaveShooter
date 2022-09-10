@@ -1,10 +1,12 @@
-using System;
 using UnityEngine;
 
-public class BulletCollision : MonoBehaviour
+namespace Bullet
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    public class BulletCollision : MonoBehaviour
     {
-        Destroy(gameObject);
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            Destroy(gameObject);
+        }
     }
 }

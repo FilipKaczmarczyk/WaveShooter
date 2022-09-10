@@ -1,4 +1,3 @@
-using System;
 using Events;
 using UnityEngine;
 
@@ -13,12 +12,19 @@ namespace Turret
         
         private void Awake()
         {
-            CurrentHealth = maxHealth;
+            SetTurretHealth(maxHealth);
         }
 
-        public void ChangeTurretHealth(int amount)
+        public void AddTurretHealth(int amount)
         {
             CurrentHealth += amount;
+            
+            TurretHealthChange?.Invoke();
+        }
+
+        public void SetTurretHealth(int amount)
+        {
+            CurrentHealth = amount;
             
             TurretHealthChange?.Invoke();
         }
