@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54599141bb2733f4aa0f762698af1042, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  autoTurret: {fileID: 11400000, guid: 0849b5561c2e6db4c86c4d280ad8a4b5, type: 2}
+  maxTurretCount: 4
+  basicGun: {fileID: 11400000, guid: 3c5fd504287feca47b28ec0f3e75efe4, type: 2}
+  basicAmmo: {fileID: 11400000, guid: 53bace06cf05847459e35a438cbb7457, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ba8551bc4e2b740849a9423a4ff878, type: 3}
+  m_Name: CheapGun
+  m_EditorClassIdentifier: 
+  upgradeName: Bassic gun
+  upgradePrefab: {fileID: 5343516916038020657, guid: 96a7d907f43dc3a40b31b0deab908ba5, type: 3}
+  upgradeCost: 0
+  upgradeImage: {fileID: 21300000, guid: 485388f5d6f2c6345a7fada612bc3d5d, type: 3}
+  nextUpgrade: {fileID: 11400000, guid: d74512d08f54932418f4fceb983465d1, type: 2}

@@ -17,15 +17,20 @@ namespace Input
         private const string ActionMapGameplay = "Gameplay";
 
         private static event EventManager.ActionMapEventHandler ChangeActionMapControls;
+        private static event EventManager.VoidEventHandler DisableActionMaps;
 
         private void OnEnable()
         {
             ChangeActionMapControls += OnChangeActionMap;
+
+            DisableActionMaps += DisableAllActionMaps;
         }
 
         private void OnDisable()
         {
             ChangeActionMapControls -= OnChangeActionMap;
+            
+            DisableActionMaps -= DisableAllActionMaps;
         }
 
         private void OnChangeActionMap(ActionMaps actionMap)
@@ -62,6 +67,11 @@ namespace Input
         public static void InvokeChangeActionMapControls(ActionMaps actionMaps)
         {
             ChangeActionMapControls?.Invoke(actionMaps);
+        }
+
+        public static void DisableAllActionMapControls()
+        {
+            DisableActionMaps?.Invoke();
         }
     }
 }

@@ -1,4 +1,4 @@
-using PlayerMoney;
+using PlayerData;
 using TMPro;
 using UnityEngine;
 

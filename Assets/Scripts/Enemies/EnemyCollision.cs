@@ -1,5 +1,5 @@
 using Events;
-using PlayerMoney;
+using PlayerData;
 using UnityEngine;
 
 namespace Enemies

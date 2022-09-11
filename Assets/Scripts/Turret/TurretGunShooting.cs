@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Input;
 using Input.ScriptableObject;
+using PlayerData.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ namespace Turret
     public class TurretGunShooting : MonoBehaviour
     {
         [SerializeField] private InputReaderSO inputReaderSo;
-        [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private PlayerDataSO playerData;
         [SerializeField] private List<Transform> firePoints;
 
         private InputActions _inputActions;
@@ -30,7 +31,7 @@ namespace Turret
         
             foreach (var firePoint in firePoints)
             {
-                Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+                Instantiate(playerData.CurrentSelectedAmmo.upgradePrefab, firePoint.position, transform.rotation);
             }
         }
     }

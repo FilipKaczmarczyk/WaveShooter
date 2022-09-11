@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ba8551bc4e2b740849a9423a4ff878, type: 3}
+  m_Name: AutoTurret
+  m_EditorClassIdentifier: 
+  upgradeName: Auto turret
+  upgradePrefab: {fileID: 175891063724006497, guid: ee3931370e2a88d44b5c2924766e9564, type: 3}
+  upgradeCost: 450
+  upgradeImage: {fileID: 21300000, guid: 15fd7365af55e6348bdcce24724e8482, type: 3}
+  nextUpgrade: {fileID: 11400000}

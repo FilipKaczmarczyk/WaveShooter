@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ba8551bc4e2b740849a9423a4ff878, type: 3}
+  m_Name: ExpensiveAmmo
+  m_EditorClassIdentifier: 
+  upgradeName: Best ammo
+  upgradePrefab: {fileID: 736743596158844464, guid: 749692769338837438c3f006bfc1e466, type: 3}
+  upgradeCost: 680
+  upgradeImage: {fileID: 21300000, guid: 4d6d3196d1ebd6b4fa00fddf623ef950, type: 3}
+  nextUpgrade: {fileID: 0}

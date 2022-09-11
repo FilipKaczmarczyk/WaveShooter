@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ba8551bc4e2b740849a9423a4ff878, type: 3}
+  m_Name: MediumGun
+  m_EditorClassIdentifier: 
+  upgradeName: Better gun
+  upgradePrefab: {fileID: 6486072362070132453, guid: 92ef2a7f2c918dd4aa46ca57dc4ed073, type: 3}
+  upgradeCost: 350
+  upgradeImage: {fileID: 21300000, guid: 40c1ed709eed04542ab75d00adcaede3, type: 3}
+  nextUpgrade: {fileID: 11400000, guid: dd5b62bf07192db45b7ccefafd1fbf2d, type: 2}
