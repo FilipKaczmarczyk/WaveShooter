@@ -21,6 +21,7 @@ namespace UI
 
         public static event EventManager.VoidEventHandler GunUpgrade;
         public static event EventManager.VoidEventHandler RefreshPanels;
+        public static event EventManager.VoidEventHandler SpawnAutoTurret;
     
         [Header("UI references")] 
         [SerializeField] private TextMeshProUGUI upgradeNameText;
@@ -37,6 +38,8 @@ namespace UI
     
         private void OnEnable()
         {
+            RefreshPanel();
+            
             RefreshPanels += RefreshPanel;
         }
 
@@ -119,13 +122,15 @@ namespace UI
                     playerData.CurrentSelectedGun = playerData.CurrentSelectedGun.nextUpgrade;
                     GunUpgrade?.Invoke();
                     break;
+                
+                case UpgradePanelType.AutoTurret:
+                    SpawnAutoTurret?.Invoke();
+                    break;
             }
 
             PlayerMoneyHandler.DecreaseMoney(_nextUpgrade.upgradeCost);
 
             RefreshPanels?.Invoke();
-        
-            RefreshPanel();
         }
     }
 }

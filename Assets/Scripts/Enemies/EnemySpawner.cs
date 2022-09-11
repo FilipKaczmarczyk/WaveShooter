@@ -20,7 +20,7 @@ namespace Enemies
                     
                     var enemyGO = Instantiate(enemyData.enemyPrefab, RandomOnCircle(Vector3.zero, spawnRadius), Quaternion.identity);
 
-                    enemyGO.GetComponent<EnemyMovement>().Init(wave.enemiesSpeedMultiplier);
+                    enemyGO.GetComponent<EnemyController>().Init(wave.enemiesSpeedMultiplier);
                 }
             }
         }

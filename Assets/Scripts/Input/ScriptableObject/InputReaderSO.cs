@@ -11,6 +11,10 @@ namespace Input.ScriptableObject
         [Header("Gameplay")]
         public InputActionReference gameplayShoot;
         public InputActionReference gameplayMousePosition;
+        public InputActionReference gameplayPause;
+        
+        [Header("Pause")]
+        public InputActionReference pauseReturn;
 
         public static void Register(Action<InputAction.CallbackContext> onInput, InputActionReference inputActionReference)
         {

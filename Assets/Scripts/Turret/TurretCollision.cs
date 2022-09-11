@@ -1,14 +1,20 @@
-using Turret;
+using Enemies;
 using UnityEngine;
 
-public class TurretCollision : MonoBehaviour
+namespace Turret
 {
-    [SerializeField] private TurretHealth turretHealth;
-    
-    private const int TurretDamageTaken = 20;
-    
-    private void OnCollisionEnter2D(Collision2D other)
+    public class TurretCollision : MonoBehaviour
     {
-        turretHealth.AddTurretHealth(-TurretDamageTaken);
+        [SerializeField] private TurretHealth turretHealth;
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                var damageToTake = other.gameObject.GetComponent<EnemyController>().GetDamage();
+                
+                turretHealth.AddTurretHealth(-damageToTake);
+            }
+        }
     }
 }

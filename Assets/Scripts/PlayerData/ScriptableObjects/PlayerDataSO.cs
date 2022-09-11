@@ -23,6 +23,7 @@ namespace PlayerData.ScriptableObjects
             CurrentSelectedGun = basicGun;
             CurrentSelectedAmmo = basicAmmo;
             AutoTurretCount = 0;
+            PlayerMoneyHandler.SetMoney(0);
         }
     }
 }

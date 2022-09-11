@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayShoot: {fileID: 7513513629862503309, guid: 46af9f3b01803d24c91ebd1f9e095296, type: 3}
   gameplayMousePosition: {fileID: -6764795863589841800, guid: 46af9f3b01803d24c91ebd1f9e095296, type: 3}
+  gameplayPause: {fileID: 7756507124642073159, guid: 46af9f3b01803d24c91ebd1f9e095296, type: 3}
+  pauseReturn: {fileID: 6418469453159733544, guid: 46af9f3b01803d24c91ebd1f9e095296, type: 3}

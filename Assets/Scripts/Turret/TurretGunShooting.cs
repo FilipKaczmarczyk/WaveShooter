@@ -13,8 +13,6 @@ namespace Turret
         [SerializeField] private PlayerDataSO playerData;
         [SerializeField] private List<Transform> firePoints;
 
-        private InputActions _inputActions;
-        
         private void OnEnable()
         {
             InputReaderSO.Register(Fire, inputReaderSo.gameplayShoot);

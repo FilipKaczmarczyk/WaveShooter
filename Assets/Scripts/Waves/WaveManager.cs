@@ -14,6 +14,8 @@ namespace Waves
         public static event EventManager.VoidEventHandler StartPrepareState;
         public static event EventManager.VoidEventHandler StartFightingState;
 
+        public static event EventManager.VoidEventHandler CompletedAllWaves;
+
         public enum WaveState
         {
             Fighting,
@@ -51,12 +53,12 @@ namespace Waves
         
         private void OnEnable()
         {
-            EnemyCollision.EnemyDie += RemoveEnemy;
+            EnemyController.EnemyDie += RemoveEnemy;
         }
     
         private void OnDisable()
         {
-            EnemyCollision.EnemyDie -= RemoveEnemy;
+            EnemyController.EnemyDie -= RemoveEnemy;
         }
         
         private void Start()
@@ -137,6 +139,8 @@ namespace Waves
         {
             if (_currentWave == waves.Count - 1)
             {
+                CompletedAllWaves?.Invoke();
+                    
                 return;
             }
             

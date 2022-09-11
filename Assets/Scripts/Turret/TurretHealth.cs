@@ -6,6 +6,7 @@ namespace Turret
     public class TurretHealth : MonoBehaviour
     {
         public static event EventManager.VoidEventHandler TurretHealthChange;
+        public static event EventManager.VoidEventHandler PlayerDied;
         public int CurrentHealth { get; private set; }
 
         [SerializeField] private int maxHealth;
@@ -20,6 +21,13 @@ namespace Turret
             CurrentHealth += amount;
             
             TurretHealthChange?.Invoke();
+
+            if (CurrentHealth <= 0)
+            {
+                CurrentHealth = 0;
+                
+                PlayerDied?.Invoke();
+            }
         }
 
         public void SetTurretHealth(int amount)
